@@ -10,6 +10,7 @@ testVector = {{1,2,3},
 
 local function runTest (x,y,z)
   local v1 = vector.new(x,y,z)
+  v1:print()
   
   -- Test magnitude function
   mag = v1:magnitude();
@@ -18,6 +19,13 @@ local function runTest (x,y,z)
 	return false
   end
   
+  -- Test asObject function
+  vObject = v1:asObject()
+  if ((vObject.x ~= x) or (vObject.y ~= y) or (vObject.z ~= z)) then
+ 	print ("FAIL: asArray(): expected", x, y, z, "but got", vObject.x, vObject.y, vObject.z )
+	return false
+  end
+
   -- Test asArray function
   vArray = v1:asArray()
   if ((vArray[X] ~= x) or (vArray[Y] ~= y) or (vArray[Z] ~= z)) then

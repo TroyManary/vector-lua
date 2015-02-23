@@ -41,6 +41,16 @@ function vector.magnitude(self)
 end
 
 -------------------------------------------------------------------------------
+-- Returns the vector as an object of {x=X, y=Y, z=Z}
+-- @function asObject
+-- @return vector object of {x=X, y=Y, z=Z}
+-- @usage velocityObject = velocity:asObject() 
+-------------------------------------------------------------------------------
+function vector.asObject(self)
+  return {x=self.x, y=self.y, z=self.z}
+end
+
+-------------------------------------------------------------------------------
 -- Returns the vector as an array of [X, Y, Z]
 -- @function asArray
 -- @return vector array of [X, Y, Z]
@@ -58,6 +68,15 @@ end
 -------------------------------------------------------------------------------
 function vector.asList(self)
   return self.x, self.y, self.z
+end
+
+-------------------------------------------------------------------------------
+-- Prints the vector as X, Y, Z
+-- @function print
+-- @usage velocity:print() 
+-------------------------------------------------------------------------------
+function vector.print(self)
+  print (self.x, self.y, self.z)
 end
 
 return vector
